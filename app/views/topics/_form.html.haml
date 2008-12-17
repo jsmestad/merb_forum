@@ -1,0 +1,9 @@
+= error_messages_for @topic
+
+= text_field :title, :label => 'Title'
+= text_field :description, :label => 'Description'
+
+= fields_for :post do
+  = text_area :content, :label => "Content"
+  
+= submit button_text

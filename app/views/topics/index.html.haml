@@ -1,0 +1,20 @@
+%h1
+  Forum Index
+  
+%table
+  %tr
+    %th
+      Topic Name
+    %th
+      Post Count
+  - @topics.each do |topic|
+    %tr
+      %td
+        %a{ :href => resource(@forum, topic) }= topic.title
+        %br
+        = topic.description
+      %td
+        = topic.posts.count
+
+%hr
+= link_to 'New Topic', resource(@forum, :topics, :new)
