@@ -1,0 +1,4 @@
+= form_for @forum, :action => resource(:forums) do
+  = partial :form, :button_text => 'Create'
+
+= link_to 'Cancel', resource(:forums)

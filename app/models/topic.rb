@@ -8,4 +8,7 @@ class Topic
   property :updated_at, DateTime
 
   validates_length :title, :min => 5
+  
+  belongs_to :forum, :class_name => 'Forum'
+  has n, :posts
 end

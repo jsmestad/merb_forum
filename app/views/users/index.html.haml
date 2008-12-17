@@ -3,7 +3,7 @@
   
 %table
   %tr
-  - for user in @users
+  - @users.each do |user|
     %tr
       %td
         = link_to 'Show', url(:user, user)

@@ -6,4 +6,6 @@ class Forum
   property :description, String
 
   validates_length :name, :min => 5
+  
+  has n, :topics
 end

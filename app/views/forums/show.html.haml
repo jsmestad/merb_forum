@@ -1,0 +1,19 @@
+%h1
+  = @forum.name
+  
+%table
+  %tr
+    %th
+      Topic
+    %th
+      Last Post
+  - @forum.topics.each do |topic|
+    %tr
+      %td
+        = topic.title
+        %br
+        = topic.description
+      %td
+        N/A
+
+= link_to 'New Topic', url(:new_forum_topic, @forum)

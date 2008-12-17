@@ -27,9 +27,14 @@
 
 Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do
+  
+  resources :forums do
+    resources :topics do
+      resources :posts
+    end
+  end
+  
   resources :users
-  # RESTful routes
-  # resources :posts
   
   # Adds the required routes for merb-auth using the password slice
   slice(:merb_auth_slice_password, :name_prefix => nil, :path_prefix => "")

@@ -8,4 +8,6 @@ class Post
   property :updated_at, DateTime
   
   validates_length :content, :min => 5
+  
+  belongs_to :topic
 end
