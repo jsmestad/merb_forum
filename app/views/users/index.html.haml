@@ -1,0 +1,13 @@
+%h1
+  Members List
+  
+%table
+  %tr
+  - for user in @users
+    %tr
+      %td
+        = link_to 'Show', url(:user, user)
+      %td
+        = link_to 'Edit', url(:edit_user,  user)
+
+= link_to 'New', url(:new_user)

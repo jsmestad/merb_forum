@@ -13,13 +13,19 @@ require "spec" # Satisfies Autotest and anyone else not using the Rake tasks
 # here again, Merb will do it for you
 Merb.start_environment(:testing => true, :adapter => 'runner', :environment => ENV['MERB_ENV'] || 'test')
 
+# load the libraries
+Dir[Merb.root / 'spec' / 'lib' / '*.rb' ].each { |f| require f }
+
 Spec::Runner.configure do |config|
   config.include(Merb::Test::ViewHelper)
   config.include(Merb::Test::RouteHelper)
   config.include(Merb::Test::ControllerHelper)
+  config.include(AuthSpecHelper)
   
   config.before(:all) do
     DataMapper.auto_migrate! if Merb.orm == :datamapper
+    @time_now = Time.now
+    Time.stub!(:now).and_return(@time_now)
   end
   
 end
