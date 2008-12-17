@@ -15,6 +15,8 @@ class User
   property :login,  String, :nullable => false, :unique => true
   property :email,  String, :nullable => false, :unique => true
   property :identity_url, String,               :unique => true
+  property :created_at,   DateTime
+  property :updated_at,   DateTime
   
   validates_format :email, :as => :email_address
   
