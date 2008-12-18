@@ -16,7 +16,10 @@ begin
   # Mixin the salted user mixin
   require 'merb-auth-more/mixins/salted_user'
   Merb::Authentication.user_class.class_eval{ include Merb::Authentication::Mixins::SaltedUser }
-    
+  
+  # Mixin the redirect back mixin
+  require 'merb-auth-more/mixins/redirect_back'
+  
   # Setup the session serialization
   class Merb::Authentication
 

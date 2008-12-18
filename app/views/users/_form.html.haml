@@ -1,0 +1,16 @@
+= error_messages_for @user
+
+%fieldset
+  %legend= title
+
+  %div= text_field :login, :label => 'Login'
+  %div= text_field :email, :label => 'Email'
+  %div= password_field :password, :label => 'Password'
+  %div= password_field :password_confirmation, :label => 'Confirm Password'
+
+  - unless @user.new_record?
+    %div
+      = text_field :identity_url, :label => 'OpenID', :class => 'openid_url'
+
+  %div
+    = submit button_text

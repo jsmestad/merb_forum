@@ -43,7 +43,7 @@ class Forums < Application
     if @forum.update_attributes(forum)
        redirect resource(@forum)
     else
-      display @forum, :edit
+      display @forum, :edit, :status => 422
     end
   end
 

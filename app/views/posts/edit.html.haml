@@ -1,0 +1,6 @@
+%h1 Edit Post
+
+= form_for @post, :action => resource(@topic.forum, @topic, :posts) do
+  = partial :form, :button_text => 'Save'
+
+= link_to 'Cancel', resource(@topic.forum, @topic)

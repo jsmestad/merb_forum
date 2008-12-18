@@ -21,6 +21,9 @@ Spec::Runner.configure do |config|
   config.include(Merb::Test::RouteHelper)
   config.include(Merb::Test::ControllerHelper)
   config.include(AuthSpecHelper)
+  config.include(ForumSpecHelper)
+  config.include(TopicSpecHelper)
+  config.include(PostSpecHelper)
   
   config.before(:all) do
     DataMapper.auto_migrate! if Merb.orm == :datamapper

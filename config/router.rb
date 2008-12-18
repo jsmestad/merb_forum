@@ -44,9 +44,9 @@ Merb::Router.prepare do
   # routes, you may want to comment/remove this line to prevent
   # clients from calling your create or destroy actions with a GET
   # default_routes
-  match("/openid/login", :method => :get).to(:controller => :open_id, :action => :login).name(:openid)
-  match("/register", :method => :get).to(:controller => :users, :action => :new).name(:signup)
+  match("/openid/login").to(:controller => 'open_id', :action => 'login').name(:openid)
+  match("/register", :method => :get).to(:controller => 'users', :action => 'new').name(:signup)
   
   # Change this for your home page to be available at /
-  # match('/').to(:controller => 'whatever', :action =>'index')
+  match('/').to(:controller => 'forums', :action =>'index').name(:root)
 end

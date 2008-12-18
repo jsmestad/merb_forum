@@ -1,9 +1,8 @@
 %h1 Register
 
-= error_messages_for @user
+= form_for @user, :action => resource(:users) do
+  = partial 'users/form', :title => 'Join with username and password', :button_text => 'Join'
 
-= form_for(@user, :action => url(:users) ) do
-  %p
-    = submit "Create"
+= partial 'open_id/login_form', :title => 'Join with OpenID', :button_text => 'Join'
 
-= link_to 'Back', url(:users)
+= link_to 'Back', url(:root)

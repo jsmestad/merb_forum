@@ -2,7 +2,7 @@
   = @topic.title
   
 - @topic.posts.each do |post|
-  %p= post.content
+  %p= "#{post.id}: #{post.content}"
 
 = link_to 'New Topic', url(:new_forum_topic, @forum)
 = link_to 'Reply', resource(@forum, @topic, :posts, :new)

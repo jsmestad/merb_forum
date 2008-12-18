@@ -2,8 +2,8 @@
 
 = text_field :title, :label => 'Title'
 = text_field :description, :label => 'Description'
-
-= fields_for :post do
-  = text_area :content, :label => "Content"
+- unless edit
+  = fields_for :post do
+    = text_area :content, :label => "Content"
   
 = submit button_text
