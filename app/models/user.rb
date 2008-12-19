@@ -20,6 +20,9 @@ class User
   
   validates_format :email, :as => :email_address
   
+  has_many :topics
+  has_many :posts
+  
   def password_required?
     identity_url.nil?
   end
