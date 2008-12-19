@@ -1,0 +1,35 @@
+Merbherd TODO
+===============
+Legend:
+  -   Not Started
+  +-  In Progress
+  +   Completed
+===============
+
+  +   Forum Structure (Forums -> Topics -> Posts)
+        Notes - Basic infrastructure has been laid out and spec'd.
+
+  -   Implement SubForums
+  
+  -   Implement BBCode
+  
+  -   Implement Post 
+  
+  +-  OpenID Authentication
+        Notes - need to figure out why POST is not working on submit
+        
+  -   Implement Roles
+        Notes - up to implementer to decide if user has_many roles or a single role (admin, moderator, user, guest)
+  
+  -   Compass / CSS
+        Notes - Logo, design are set. However need to get basic forum structure established (CSS tables, ref. beast)
+        
+  -   Implement Smilies
+    
+  -   Syntax Highlighting
+        Some sort of highlighting for posting content
+        
+  -   Topic/Post pagination
+  
+This should get me up till launch day...
+  
