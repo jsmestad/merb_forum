@@ -8,12 +8,12 @@ Legend:
 
   +   Forum Structure (Forums -> Topics -> Posts)
         Notes - Basic infrastructure has been laid out and spec'd.
+  
+  +-  Associate Users with Posts
 
   -   Implement SubForums
   
   -   Implement BBCode
-  
-  -   Implement Post 
   
   +-  OpenID Authentication
         Notes - need to figure out why POST is not working on submit
@@ -21,13 +21,13 @@ Legend:
   -   Implement Roles
         Notes - up to implementer to decide if user has_many roles or a single role (admin, moderator, user, guest)
   
-  -   Compass / CSS
+  +-   CSS
         Notes - Logo, design are set. However need to get basic forum structure established (CSS tables, ref. beast)
         
   -   Implement Smilies
     
   -   Syntax Highlighting
-        Some sort of highlighting for posting content
+        Some sort of highlighting for posting code snippets. Gist integration anyone?
         
   -   Topic/Post pagination
   
