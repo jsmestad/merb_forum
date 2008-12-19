@@ -1,10 +1,21 @@
+.breadcrumb
+  %a{:href => url(:root)}
+    MerbHerd
+  >>
+  %a{:href => resource(@forum)}
+    = @forum.name
+
 %h1
   = @forum.name
-  
+
+= link_to 'New Topic', url(:new_forum_topic, @forum)
+
 %table.wide
   %tr
     %th{ :colspan => '2' }
       Topic
+    %th
+      Replies
     %th
       Last Post
     %th
@@ -19,7 +30,11 @@
         %span.description
           = topic.description
       %td
-        N/A
+        = topic.posts.count - 1
+      %td
+        by [last_poster]
+        %br
+        = topic.posts.last.created_at
       %td
         = link_to 'edit', url(:edit_forum_topic, @forum, @topic)
 

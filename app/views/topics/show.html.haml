@@ -1,8 +1,58 @@
+.breadcrumb
+  %a{:href => url(:root)}
+    MerbHerd
+  >>
+  %a{:href => resource(@topic.forum)}
+    = @topic.forum.name
+  >>
+  %a{:href => resource(@topic.forum, @topic)}
+    = @topic.title
+
+= link_to 'New Topic', url(:new_forum_topic, @forum)
+= link_to 'Reply', resource(@forum, @topic, :posts, :new)
+
 %h1
   = @topic.title
-  
 - @topic.posts.each do |post|
-  %p= "#{post.id}: #{post.content}"
+  .post
+    .inner
+      %span.corners-top
+        %span
+      .postbody
+        %h3.first
+          %a{ :href => "##{post.id}" }
+            = post.title
+        %p.author
+          %a{ :href => "./viewtopic.php?p=8060285#p8060285" }
+            %img{ :title => "Post", :src => "./styles/prosilver/imageset/icon_post_target.gif", :height => "9", :alt => "Post", :width => "11" }
+          by
+          %strong
+            %a
+              [posters_name]
+          = post.created_at
+        .content
+          = post.content
+        .signature
+        
+      %dl.postprofile
+        %dt
+          %a
+            [posters_name]
+        %dd
+          [posters_role]
+        %dd
+          \&nbsp;
+        %dd
+          %strong
+            Posts: 
+          [posters_post_count]
+        %dd
+          %strong
+            Joined:
+          [posters_registration_date]
+
+      %span.corners-bottom
+        %span
 
 = link_to 'New Topic', url(:new_forum_topic, @forum)
 = link_to 'Reply', resource(@forum, @topic, :posts, :new)

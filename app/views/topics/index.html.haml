@@ -6,7 +6,7 @@
     %th
       Topic Name
     %th
-      Post Count
+      Replies
   - @topics.each do |topic|
     %tr
       %td
@@ -14,7 +14,7 @@
         %br
         = topic.description
       %td
-        = topic.posts.count
+        = topic.posts.count - 1
 
 %hr
 = link_to 'New Topic', resource(@forum, :topics, :new)

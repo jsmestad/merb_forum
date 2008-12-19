@@ -3,18 +3,26 @@
   
 %table.wide
   %tr
-    %th
+    %th{ :colspan => '2' }
       Forum Name
     %th
-      Topic Count
+      Topics
+    %th
+      Posts
+    %th
+      Last Post
   - @forums.each do |forum|
     %tr
+      %td
+        
       %td
         %a{ :href => resource(forum) }= forum.name
         %br
         = forum.description
       %td
         = forum.topics.count
+      %td
+        = forum.topics.posts.count
 
 %hr
 = link_to 'New Forum', url(:new_forum)
