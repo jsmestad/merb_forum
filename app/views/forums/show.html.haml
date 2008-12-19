@@ -1,19 +1,26 @@
 %h1
   = @forum.name
   
-%table
+%table.wide
   %tr
-    %th
+    %th{ :colspan => '2' }
       Topic
     %th
       Last Post
+    %th
+      Admin
   - @forum.topics.each do |topic|
     %tr
       %td
-        = topic.title
+      
+      %td
+        = link_to topic.title, resource(@forum, topic)
         %br
-        = topic.description
+        %span.description
+          = topic.description
       %td
         N/A
+      %td
+        = link_to 'edit', url(:edit_forum_topic, @forum, @topic)
 
 = link_to 'New Topic', url(:new_forum_topic, @forum)
