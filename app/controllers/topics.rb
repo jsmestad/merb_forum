@@ -41,7 +41,7 @@ class Topics < Application
     @topic = Topic.get(id)
     raise NotFound unless @topic
     if @topic.update_attributes(topic)
-      redirect resource(@forum, @topic),
+      redirect resource(@forum, :topics),
         :message => {
           :success => "Topic was successfully updated."
         }

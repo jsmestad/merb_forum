@@ -1,51 +1,126 @@
-body
-{
-	margin: 0;
-	padding: 0;
-	background: #d7d7d7;
-	font-family: Arial, Helvetica, sans-serif;
+/**
+ * Global Level Declarations
+ *---------------------------*/
+body {
+  margin: 0;
+  padding: 0;
+  background: #FDFDFD;
+}
+body, td {
+  font: normal normal normal 14px/normal Arial, Verdana, sans-serif;
+  color: #666;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0px;
+}
+h1 {
+  font-size: 27px;
+}
+h2 {
+  font-size: 27px;
+  color: #0099CB
+}
+h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+h5 {
+  font-size: 14px;
+  color: #666;
+  margin: 0px 0px 5px 0px;
+}
+form {
+  display: inline;
+}
+a {
+  text-decoration: none;
+  color: #669933;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline;
+  color: #FF3300;
+}
+img {
+  border: 0px;
+}
+input, select, textarea {
+  font: normal normal normal 15px/normal Arial, Verdana, sans-serif;
+}
+.clear, .clear-both {
+  clear: both;
+  height: 1px;
+  overflow: hidden;
+}
+.clickable {
+  cursor: pointer;
+}
+.no-border {
+  border: 0 !important;
+}
+table {
+  width: 100%;
+  border: collapse;
+}
+table th {
+  text-align: left;
+}
+/**
+ * Layout Level Declarations
+ *---------------------------*/
+ 
+#header {
+	background-color: #333;
+	color: #E1E1E1;
+	padding: 10px;
+}
+#main {
+	width: 80%;
+	margin: 10px auto;
+}
+#footer {
+	font-size: 0.75em;
+	text-align: right;
+	padding: 5px;
+	margin-right: 20px;
+}
+#breadcrumb {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 15px -8px;
 }
 
-table
-{
-	border-collapse:collapse;
-	font-family: 'Lucida Grande', Tahoma, Arial, Helvetica, sans-serif;
+.action-items {
+  text-align: right;
+  margin: 10px 20px;
 }
 
-table.wide {
-	width:100%;
+/**
+ * Forums Level Declarations
+ *---------------------------*/
+ 
+ 
+/**
+ * Topics Level Declarations
+ *---------------------------*/
+ 
+ 
+/**
+ * Posts Level Declarations
+ *---------------------------*/
+
+.post-body {
+  padding: 5px;
 }
 
-table tr th {
-	font-size:0.8em;
+.post-body .content {
+  
 }
 
-span.description {
-	font-size: 0.7em;
-	font-color: #999;
-}
-
-.postbody {
-	padding: 0;
-	line-height: 1.48em;
-	color: #333333;
-	width: 76%;
-	float: left;
-	clear: both;
-}
-
-.postprofile {
-	/* Also see tweaks.css */
-	margin: 5px 0 10px 0;
-	min-height: 80px;
-	color: #666666;
-	border-left: 1px solid #FFFFFF;
-	width: 22%;
-	float: right;
-	display: inline;
-}
-
-.postprofile dd, .postprofile dt {
-	line-height: 1.2em;
-	margin-left: 8px;
+.post-profile {
+  float: right;
+  width: 25%;
+  padding: 10px;
+  border-left: 1px solid #ccc;
 }

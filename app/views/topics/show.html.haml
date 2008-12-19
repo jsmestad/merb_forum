@@ -1,58 +1,42 @@
-.breadcrumb
+#breadcrumb
   %a{:href => url(:root)}
     MerbHerd
   >>
   %a{:href => resource(@topic.forum)}
     = @topic.forum.name
   >>
-  %a{:href => resource(@topic.forum, @topic)}
-    = @topic.title
-
-= link_to 'New Topic', url(:new_forum_topic, @forum)
-= link_to 'Reply', resource(@forum, @topic, :posts, :new)
-
-%h1
   = @topic.title
-- @topic.posts.each do |post|
-  .post
-    .inner
-      %span.corners-top
-        %span
-      .postbody
-        %h3.first
-          %a{ :href => "##{post.id}" }
-            = post.title
-        %p.author
-          %a{ :href => "./viewtopic.php?p=8060285#p8060285" }
-            %img{ :title => "Post", :src => "./styles/prosilver/imageset/icon_post_target.gif", :height => "9", :alt => "Post", :width => "11" }
-          by
-          %strong
-            %a
-              [posters_name]
-          = post.created_at
-        .content
-          = post.content
-        .signature
-        
-      %dl.postprofile
-        %dt
-          %a
-            [posters_name]
-        %dd
-          [posters_role]
-        %dd
-          \&nbsp;
-        %dd
-          %strong
-            Posts: 
-          [posters_post_count]
-        %dd
-          %strong
-            Joined:
-          [posters_registration_date]
 
-      %span.corners-bottom
-        %span
+.action-items
+  = link_to 'New Topic', url(:new_forum_topic, @forum)
+  |
+  = link_to 'Reply', resource(@forum, @topic, :posts, :new)
 
-= link_to 'New Topic', url(:new_forum_topic, @forum)
-= link_to 'Reply', resource(@forum, @topic, :posts, :new)
+%table
+  %tr
+    %td
+      = @topic.title
+  - @topic.posts.each do |post|
+    %tr
+      %td
+        %div{:id => "p#{post.id}"}
+          .post-profile
+            [avatar]
+            %br
+            %a{} [User1]
+            %br
+            [Administrator]
+
+            %ul
+              %li
+                Posts: [0]
+              %li
+                Joined: [Sept 23, 2008]
+                
+          .post-body
+            = post.content
+          
+.action-items
+  = link_to 'New Topic', url(:new_forum_topic, @forum)
+  |
+  = link_to 'Reply', resource(@forum, @topic, :posts, :new)

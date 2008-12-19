@@ -9,6 +9,7 @@ class Topic
 
   validates_length :title, :min => 5
   
-  belongs_to :forum, :class_name => 'Forum'
   has n, :posts
+  belongs_to :forum, :class_name => 'Forum'
+  belongs_to :user
 end

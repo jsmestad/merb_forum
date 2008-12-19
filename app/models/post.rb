@@ -10,4 +10,5 @@ class Post
   validates_length :content, :min => 5
   
   belongs_to :topic
+  belongs_to :user
 end

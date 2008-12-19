@@ -1,14 +1,14 @@
-.breadcrumb
+#breadcrumb
   %a{:href => url(:root)}
     MerbHerd
   >>
-  %a{:href => resource(@forum)}
-    = @forum.name
+  = @forum.name
 
 %h1
   = @forum.name
 
-= link_to 'New Topic', url(:new_forum_topic, @forum)
+.action-items
+  = link_to 'New Topic', url(:new_forum_topic, @forum)
 
 %table.wide
   %tr
@@ -38,4 +38,5 @@
       %td
         = link_to 'edit', url(:edit_forum_topic, @forum, @topic)
 
-= link_to 'New Topic', url(:new_forum_topic, @forum)
+.action-items
+  = link_to 'New Topic', url(:new_forum_topic, @forum)

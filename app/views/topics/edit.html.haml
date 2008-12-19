@@ -1,6 +1,6 @@
 %h1 Edit Topic
 
-= form_for @topic, :action => resource(@forum, :topics) do
+= form_for @topic, :action => resource(@forum, @topic) do
   = partial :form, :button_text => 'Update', :edit => true
 
 = link_to 'Cancel', resource(@forum)
