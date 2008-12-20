@@ -6,7 +6,11 @@ end
 
 describe "Users Resource" do
   
-  describe "index action" do
+  describe "index action", :given => 'a user exists' do
+    before do
+      login('Test', 'password')
+    end
+    
     it "should respond successfully" do
       visits("/users").should be_successful
     end
@@ -19,6 +23,7 @@ describe "Users Resource" do
 
   describe "show action", :given => 'a user exists' do
     before do
+      login('Test', 'password')
       @response = visits("/users/1")
     end
     
@@ -55,6 +60,7 @@ describe "Users Resource" do
   
   describe "edit action", :given => 'a user exists' do
     before do
+      login('Test', 'password')
       @response = visit("/users/1/edit")
     end
     
@@ -72,6 +78,7 @@ describe "Users Resource" do
   
   describe "update action", :given => 'a user exists' do
     before do
+      login('Test', 'password')
       @response = visit("/users/1", :put, :user => {:email => 'theguy@hotmail.com'})
     end
     
@@ -87,6 +94,7 @@ describe "Users Resource" do
   
   describe "destroy action", :given => 'a user exists' do
     before do
+      login('Test', 'password')
       @user = User.first
       @user.should_not be_nil
       @response = visit("/users/#{@user.id}", :delete)
