@@ -24,7 +24,7 @@
       %td
         = forum.topics.posts.count
       %td
-        = forum.topics.posts.last.created_at
+        = forum.topics.posts.last ? forum.topics.posts.last.created_at : "Never Posted"
 
 %hr
 = link_to 'New Forum', url(:new_forum)
