@@ -2,13 +2,27 @@
 %html{ "xml:lang" => "en-us", :lang => "en-us", :xmlns => "http://www.w3.org/1999/xhtml" }
   %head
     %title
-      Fresh Merb App
+      Merbherd Forums
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type" }
     %link{ :href => "/stylesheets/master.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8" }
 
   %body
     #container
       #header
+        #navigation
+          %ul
+            %li
+              %a{:href => url(:root)} main
+            %li
+              %a{:href => url(:users)} members list
+              - if session.user
+                %li
+                  %a{:href => resource(session.user)} account
+                %li
+                  %a{:href => url(:logout)} logout
+              - else
+                %li
+                  %a{:href => url(:new_user)} signup  
         %h1 Merbherd
       #main
         = #message[:notice]

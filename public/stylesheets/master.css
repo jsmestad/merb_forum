@@ -86,12 +86,28 @@ table th {
 	width: 80%;
 	margin: 0 auto;
 }
+#navigation {
+  float: right;
+}
+#navigation li {
+  display: inline;
+  padding: 8px;
+}
+#navigation a,
+#navigation a:visited {
+  color: #E1E1E1;
+  font-weight: bold;
+  border-bottom: 1px solid #fff;
+}
+#navigation a:hover {
+ text-decoration: none;
+ color: #669933; 
+}
 #breadcrumb {
   font-size: 13px;
   font-weight: bold;
   margin: 15px -8px;
 }
-
 .action-items {
   text-align: right;
   margin: 10px 20px;
