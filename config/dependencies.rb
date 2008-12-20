@@ -25,3 +25,4 @@ dependency "dm-validations", dm_gems_version
 
 # Merbherd Dependencies
 dependency "cpjolicoeur-bb-ruby", "~> 0.8.1", :require_as => 'bb-ruby'
+dependency "coderay"

@@ -25,7 +25,10 @@
         = forum.topics.posts.count
       %td
         - if forum.topics.posts.last
-          = "by #{forum.topics.posts.last.user.login} <br /> #{time_lost_in_words(forum.topics.posts.last.created_at)} ago"
+          by
+          = forum.topics.posts.last.user.login
+          %br
+          = forum.topics.posts.last.created_at.formatted(:post)
         - else
           "Never Posted"
 

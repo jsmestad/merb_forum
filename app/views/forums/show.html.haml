@@ -1,6 +1,5 @@
 #breadcrumb
-  %a{:href => url(:root)}
-    MerbHerd
+  %a{:href => url(:root)} MerbHerd
   >>
   = @forum.name
 
@@ -32,9 +31,10 @@
       %td
         = topic.posts.count - 1
       %td
-        by [last_poster]
+        by
+        %a{:href => resource(topic.posts.last.user)}= topic.posts.last.user.login
         %br
-        = topic.posts.last.created_at
+        = topic.posts.last.created_at.formatted(:post)
       %td
         = link_to 'edit', url(:edit_forum_topic, @forum, @topic)
 

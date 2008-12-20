@@ -1,9 +1,7 @@
 #breadcrumb
-  %a{:href => url(:root)}
-    MerbHerd
+  %a{:href => url(:root)}MerbHerd
   >>
-  %a{:href => resource(@topic.forum)}
-    = @topic.forum.name
+  %a{:href => resource(@topic.forum)}= @topic.forum.name
   >>
   = @topic.title
 
@@ -23,7 +21,7 @@
           .post-profile
             = image_tag "default_avatar.png"
             %br
-            %a{}= post.user.login
+            %a{:href => resource(post.user)}= post.user.login
             %br
             [Administrator]
 
@@ -36,7 +34,7 @@
                 = post.user.created_at.formatted(:standard)
                 
           .post-body
-            = post.content.bbcode_to_html
+            = post.content.bbcode_to_html({}, true, :code)
           
 .action-items
   = link_to 'New Topic', url(:new_forum_topic, @forum)
