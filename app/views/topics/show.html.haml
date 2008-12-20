@@ -34,7 +34,7 @@
                 = post.user.created_at.formatted(:standard)
                 
           .post-body
-            = post.content.bbcode_to_html({}, true, :code)
+            = post.content
           
 .action-items
   = link_to 'New Topic', url(:new_forum_topic, @forum)

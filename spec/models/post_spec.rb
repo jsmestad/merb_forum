@@ -37,3 +37,48 @@ describe Post do
   end
   
 end
+
+describe Post, 'when styling for BB_code' do
+  
+  before(:each) do
+    @post = Post.new
+  end
+  
+  it 'should change simple bold tags to HTML bold tags' do
+    @post.content = "this should be [b]bold[/b]"
+    @post.send(:style_bbcode)
+    @post.content.should == 'this should be <strong>bold</strong>'
+  end
+  
+  it 'should ignore [code] tags' do
+    @post.content = "this is a [code] code snippet [/code]"
+    lambda{ @post.send(:style_bbcode) }.should_not change(@post, :content)
+  end
+  
+end
+
+describe Post, 'when highlighting code snippets' do
+  
+  before(:each) do
+    @post = Post.new
+  end
+  
+  it 'should style a simple class definition' do
+    @post.content = "[code]def methodname; end[/code]"
+    @post.send(:highlight_code)
+    @post.content.should == "<span class=\"r\">def</span> <span class=\"fu\">methodname</span>; <span class=\"r\">end</span>"
+  end
+  
+  it 'should ignore text before and after the code block' do
+    @post.content = "Before code [code] class ModelName < SuperClass; [/code] after code"
+    @post.send(:highlight_code)
+    @post.content.should == "Before code  <span class=\"r\">class</span> <span class=\"cl\">ModelName</span> &lt; <span class=\"co\">SuperClass</span>;  after code"
+  end
+  
+  it 'should not hit Coderay if there is no [code] block' do
+    @post.content = "Some regular text"
+    CodeRay.should_not_receive(:scan)
+    @post.send(:highlight_code)
+  end
+  
+end
