@@ -14,7 +14,7 @@
   - @forums.each do |forum|
     %tr
       %td
-        
+        = image_tag "icons/full_page.png"
       %td
         %a{ :href => resource(forum) }= forum.name
         %br
@@ -23,6 +23,8 @@
         = forum.topics.count
       %td
         = forum.topics.posts.count
+      %td
+        = forum.topics.posts.last.created_at
 
 %hr
 = link_to 'New Forum', url(:new_forum)

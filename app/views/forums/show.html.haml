@@ -23,7 +23,7 @@
   - @forum.topics.each do |topic|
     %tr
       %td
-      
+        = image_tag "icons/comments.png"
       %td
         = link_to topic.title, resource(@forum, topic)
         %br

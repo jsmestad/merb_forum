@@ -13,12 +13,12 @@ module AuthSpecHelper
     User.create(user_attributes.update(attributes))
   end
 
-  def login(email, password)
+  def login(login, password)
     request(
       url(:perform_login),
       :method => 'PUT',
       :params => {
-        :email => email,
+        :login => login,
         :password => password
       })
   end

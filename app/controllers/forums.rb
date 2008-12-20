@@ -1,5 +1,6 @@
 class Forums < Application
-  
+  before :ensure_authenticated, :exclude => [:index, :show]
+    
   def index
     @forums = Forum.all
     display @forums

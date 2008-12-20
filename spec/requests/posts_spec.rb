@@ -7,6 +7,8 @@ end
 describe "Posts Resource" do
   
   before(:each) do
+    create_user
+    login('Test', 'password')
     Forum.create(forum_attributes)
     Topic.create(topic_attributes)
   end
@@ -48,7 +50,7 @@ describe "Posts Resource" do
     end
     
     it 'should create successfully' do
-      response = visit("/forums/1/topics/1/posts", :post, :post => post_attributes)
+      response = visit("/forums/1/topics/1/posts", :post, :post => post_attributes.merge(:user_id => ''))
       response.should be_successful
       Post.first.should_not be_nil
       #response.should redirect(resource(@forum))

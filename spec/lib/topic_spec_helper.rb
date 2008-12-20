@@ -3,7 +3,8 @@ module TopicSpecHelper
     {
       :title => 'Need Help',
       :description => 'Please',
-      :forum_id => '1'
+      :forum_id => 1,
+      :user_id => 1
     }
   end
   

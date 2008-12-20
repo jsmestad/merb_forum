@@ -7,6 +7,8 @@ end
 describe "Topics Resource" do
   
   before(:each) do
+    create_user
+    login('Test', 'password')
     Forum.create(forum_attributes)
   end
   
@@ -55,10 +57,14 @@ describe "Topics Resource" do
       response = visit("/forums/1/topics", :post, :topic => {:title => ''}, :post => {:content => 'the dude was here'} )
       response.should_not be_successful
       response.status.should == 422
+      
+      response = visit("/forums/1/topics", :post, :topic => {:title => 'the dude was here'}, :post => {:content => ''} )
+      response.should_not be_successful
+      response.status.should == 422
     end
     
     it 'should create successfully' do
-      response = visit("/forums/1/topics", :post, :topic => topic_attributes, :post => {:content => 'the dude was here'})
+      response = visit("/forums/1/topics", :post, :topic => topic_attributes, :post => post_attributes)
       response.should be_successful
       Topic.first.should_not be_nil
       #response.should redirect(resource(@forum))

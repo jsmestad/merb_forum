@@ -1,9 +1,10 @@
 = error_messages_for @topic
 
-= text_field :title, :label => 'Title'
-= text_field :description, :label => 'Description'
-- unless edit
-  = fields_for :post do
-    = text_area :content, :label => "Content"
+%fieldset
+  = text_field :title, :label => 'Title'
+  = text_field :description, :label => 'Description'
+  - unless edit
+    = fields_for :post do
+      = text_area :content, :label => "Content"
   
 = submit button_text

@@ -6,6 +6,11 @@ end
 
 describe "Forums Resource" do
   
+  before do
+    create_user
+    login('Test', 'password')
+  end
+  
   describe "index action" do
     it "should respond successfully" do
       visits("/forums").should be_successful

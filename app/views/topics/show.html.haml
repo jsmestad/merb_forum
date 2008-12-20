@@ -21,17 +21,17 @@
       %td
         %div{:id => "p#{post.id}"}
           .post-profile
-            [avatar]
+            = image_tag "default_avatar.png"
             %br
-            %a{} [User1]
+            %a{}= post.user.login
             %br
             [Administrator]
 
             %ul
               %li
-                Posts: [0]
+                Posts: post.user.posts.count
               %li
-                Joined: [Sept 23, 2008]
+                Joined: post.user.created_at
                 
           .post-body
             = post.content

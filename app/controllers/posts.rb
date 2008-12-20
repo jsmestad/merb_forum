@@ -1,4 +1,5 @@
 class Posts < Application
+  before :ensure_authenticated
   before :fetch_topic
   
   def new
@@ -10,6 +11,7 @@ class Posts < Application
   
   def create(post)
     @post = @topic.posts.build(post)
+    @post.user = session.user
     if @post.save
       redirect resource(@topic.forum, @topic),
         :message => {

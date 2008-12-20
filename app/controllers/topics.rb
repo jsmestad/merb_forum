@@ -1,4 +1,5 @@
 class Topics < Application
+  before :ensure_authenticated, :exclude => [:index, :show]
   before :fetch_forum
   
   def index
@@ -19,7 +20,9 @@ class Topics < Application
   
   def create(topic, post)
     @topic = @forum.topics.build(topic)
+    @topic.user = session.user
     @post = @topic.posts.build(post)
+    @post.user = session.user
     if @topic.save && @post.save
       redirect resource(@forum, @topic), 
         :message => {
