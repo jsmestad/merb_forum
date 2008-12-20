@@ -29,12 +29,14 @@
 
             %ul
               %li
-                Posts: post.user.posts.count
+                Posts:
+                = post.user.posts.count
               %li
-                Joined: post.user.created_at
+                Member Since
+                = post.user.created_at.formatted(:standard)
                 
           .post-body
-            = post.content
+            = post.content.bbcode_to_html
           
 .action-items
   = link_to 'New Topic', url(:new_forum_topic, @forum)

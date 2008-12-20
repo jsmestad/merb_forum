@@ -24,7 +24,10 @@
       %td
         = forum.topics.posts.count
       %td
-        = forum.topics.posts.last ? forum.topics.posts.last.created_at : "Never Posted"
+        - if forum.topics.posts.last
+          = "by #{forum.topics.posts.last.user.login} <br /> #{time_lost_in_words(forum.topics.posts.last.created_at)} ago"
+        - else
+          "Never Posted"
 
 %hr
 = link_to 'New Forum', url(:new_forum)
