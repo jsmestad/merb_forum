@@ -1,4 +1,6 @@
 class Topics < Application
+  include Merb::PostsHelper
+  
   before :ensure_authenticated, :exclude => [:index, :show]
   before :fetch_forum
   
