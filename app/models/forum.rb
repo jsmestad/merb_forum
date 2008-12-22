@@ -8,4 +8,5 @@ class Forum
   validates_length :name, :min => 5
   
   has n, :topics
+  belongs_to :category
 end
