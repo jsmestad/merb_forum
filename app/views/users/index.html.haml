@@ -1,13 +1,14 @@
-%h1
-  Members List
+#main
+  %h2
+    Members List
   
-%table
-  %tr
-  - @users.each do |user|
+  %table
     %tr
-      %td
-        = link_to 'Show', url(:user, user)
-      %td
-        = link_to 'Edit', url(:edit_user,  user)
+    - @users.each do |user|
+      %tr
+        %td
+          = link_to 'Show', url(:user, user)
+        %td
+          = link_to 'Edit', url(:edit_user,  user)
 
-= link_to 'New', url(:new_user)
+  = link_to 'New', url(:new_user)

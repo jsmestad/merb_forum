@@ -170,6 +170,7 @@ body {
   background-color: #FAFAFA;
 }
 .post-header {
+  margin-right: 280px;
   padding: 5px;
 }
 .post-header h4 {
@@ -183,144 +184,146 @@ body {
 
 .post-body {
   padding: 10px;
+  margin-right: 280px;
 }
 
 .post-body .content {
-  
 }
 
 .post-profile {
   font-size: 11px;
+  float: right;
   width: 250px;
   padding: 10px;
   border-left: 1px solid #ccc;
 }
 
 /** 
- * CodeRay Styles 
+ * code-ray Styles 
  * -------------- **/
-.CodeRay {
+.code-ray {
+ font-size: 11px;
  background-color: #f8f8f8;
  border: 1px solid silver;
- font-family: 'Courier New', 'Terminal', monospace;
+ font-family: 'Monaco', 'Courier New', 'Terminal', monospace;
  color: #100;
 }
-.CodeRay pre { margin: 0px }
+.code-ray pre { margin: 0px }
 
-div.CodeRay { }
+div.code-ray { }
 
-span.CodeRay { white-space: pre; border: 0px; padding: 2px }
+span.code-ray { white-space: pre; border: 0px; padding: 2px }
 
-table.CodeRay { border-collapse: collapse; width: 100%; padding: 2px }
-table.CodeRay td { padding: 2px 4px; vertical-align: top }
+table.code-ray { border-collapse: collapse; width: 100%; padding: 2px }
+table.code-ray td { padding: 2px 4px; vertical-align: top }
 
-.CodeRay .line_numbers, .CodeRay .no {
+.code-ray .line_numbers, .code-ray .no {
  background-color: #def;
  color: gray;
  text-align: right;
 }
-.CodeRay .line_numbers tt { font-weight: bold }
-.CodeRay .no { padding: 0px 4px }
-.CodeRay .code { width: 100% }
+.code-ray .line_numbers tt { font-weight: bold }
+.code-ray .no { padding: 0px 4px }
+.code-ray .code { width: 100% }
 
-ol.CodeRay { font-size: 10pt }
-ol.CodeRay li { white-space: pre }
+ol.code-ray { font-size: 10pt }
+ol.code-ray li { white-space: pre }
 
-.CodeRay .code pre { overflow: auto }
+.code-ray .code pre { overflow: auto }
 
-.CodeRay .debug { color:white ! important; background:blue ! important; }
+.code-ray .debug { color:white ! important; background:blue ! important; }
 
-.CodeRay .af { color:#00C }
-.CodeRay .an { color:#007 }
-.CodeRay .at { color:#f08 }
-.CodeRay .av { color:#700 }
-.CodeRay .aw { color:#C00 }
-.CodeRay .bi { color:#509; font-weight:bold }
-.CodeRay .c  { color:#666; }
+.code-ray .af { color:#00C }
+.code-ray .an { color:#007 }
+.code-ray .at { color:#f08 }
+.code-ray .av { color:#700 }
+.code-ray .aw { color:#C00 }
+.code-ray .bi { color:#509; font-weight:bold }
+.code-ray .c  { color:#666; }
 
-.CodeRay .ch { color:#04D }
-.CodeRay .ch .k { color:#04D }
-.CodeRay .ch .dl { color:#039 }
+.code-ray .ch { color:#04D }
+.code-ray .ch .k { color:#04D }
+.code-ray .ch .dl { color:#039 }
 
-.CodeRay .cl { color:#B06; font-weight:bold }
-.CodeRay .co { color:#036; font-weight:bold }
-.CodeRay .cr { color:#0A0 }
-.CodeRay .cv { color:#369 }
-.CodeRay .df { color:#099; font-weight:bold }
-.CodeRay .di { color:#088; font-weight:bold }
-.CodeRay .dl { color:black }
-.CodeRay .do { color:#970 }
-.CodeRay .ds { color:#D42; font-weight:bold }
-.CodeRay .e  { color:#666; font-weight:bold }
-.CodeRay .en { color:#800; font-weight:bold }
-.CodeRay .er { color:#F00; background-color:#FAA }
-.CodeRay .ex { color:#F00; font-weight:bold }
-.CodeRay .fl { color:#60E; font-weight:bold }
-.CodeRay .fu { color:#06B; font-weight:bold }
-.CodeRay .gv { color:#d70; font-weight:bold }
-.CodeRay .hx { color:#058; font-weight:bold }
-.CodeRay .i  { color:#00D; font-weight:bold }
-.CodeRay .ic { color:#B44; font-weight:bold }
+.code-ray .cl { color:#B06; font-weight:bold }
+.code-ray .co { color:#036; font-weight:bold }
+.code-ray .cr { color:#0A0 }
+.code-ray .cv { color:#369 }
+.code-ray .df { color:#099; font-weight:bold }
+.code-ray .di { color:#088; font-weight:bold }
+.code-ray .dl { color:black }
+.code-ray .do { color:#970 }
+.code-ray .ds { color:#D42; font-weight:bold }
+.code-ray .e  { color:#666; font-weight:bold }
+.code-ray .en { color:#800; font-weight:bold }
+.code-ray .er { color:#F00; background-color:#FAA }
+.code-ray .ex { color:#F00; font-weight:bold }
+.code-ray .fl { color:#60E; font-weight:bold }
+.code-ray .fu { color:#06B; font-weight:bold }
+.code-ray .gv { color:#d70; font-weight:bold }
+.code-ray .hx { color:#058; font-weight:bold }
+.code-ray .i  { color:#00D; font-weight:bold }
+.code-ray .ic { color:#B44; font-weight:bold }
 
-.CodeRay .il { background: #eee }
-.CodeRay .il .il { background: #ddd }
-.CodeRay .il .il .il { background: #ccc }
-.CodeRay .il .idl { font-weight: bold; color: #888 }
+.code-ray .il { background: #eee }
+.code-ray .il .il { background: #ddd }
+.code-ray .il .il .il { background: #ccc }
+.code-ray .il .idl { font-weight: bold; color: #888 }
 
-.CodeRay .im { color:#f00; }
-.CodeRay .in { color:#B2B; font-weight:bold }
-.CodeRay .iv { color:#33B }
-.CodeRay .la { color:#970; font-weight:bold }
-.CodeRay .lv { color:#963 }
-.CodeRay .oc { color:#40E; font-weight:bold }
-.CodeRay .of { color:#000; font-weight:bold }
-.CodeRay .op { }
-.CodeRay .pc { color:#038; font-weight:bold }
-.CodeRay .pd { color:#369; font-weight:bold }
-.CodeRay .pp { color:#579; }
-.CodeRay .ps { color:#00C; font-weight: bold; }
-.CodeRay .pt { color:#339; font-weight:bold }
-.CodeRay .r, .kw  { color:#080; font-weight:bold }
+.code-ray .im { color:#f00; }
+.code-ray .in { color:#B2B; font-weight:bold }
+.code-ray .iv { color:#33B }
+.code-ray .la { color:#970; font-weight:bold }
+.code-ray .lv { color:#963 }
+.code-ray .oc { color:#40E; font-weight:bold }
+.code-ray .of { color:#000; font-weight:bold }
+.code-ray .op { }
+.code-ray .pc { color:#038; font-weight:bold }
+.code-ray .pd { color:#369; font-weight:bold }
+.code-ray .pp { color:#579; }
+.code-ray .ps { color:#00C; font-weight: bold; }
+.code-ray .pt { color:#339; font-weight:bold }
+.code-ray .r, .kw  { color:#080; font-weight:bold }
 
-.CodeRay .ke { color: #808; }
-.CodeRay .ke .dl { color: #606; }
-.CodeRay .ke .ch { color: #80f; }
-.CodeRay .vl { color: #088; }
+.code-ray .ke { color: #808; }
+.code-ray .ke .dl { color: #606; }
+.code-ray .ke .ch { color: #80f; }
+.code-ray .vl { color: #088; }
 
-.CodeRay .rx { background-color:#fff0ff }
-.CodeRay .rx .k { color:#808 }
-.CodeRay .rx .dl { color:#404 }
-.CodeRay .rx .mod { color:#C2C }
-.CodeRay .rx .fu  { color:#404; font-weight: bold }
+.code-ray .rx { background-color:#fff0ff }
+.code-ray .rx .k { color:#808 }
+.code-ray .rx .dl { color:#404 }
+.code-ray .rx .mod { color:#C2C }
+.code-ray .rx .fu  { color:#404; font-weight: bold }
 
-.CodeRay .s { background-color:#fff0f0; color: #D20; }
-.CodeRay .s .s { background-color:#ffe0e0 }
-.CodeRay .s .s  .s { background-color:#ffd0d0 }
-.CodeRay .s .k { }
-.CodeRay .s .ch { color: #b0b; }
-.CodeRay .s .dl { color: #710; }
+.code-ray .s { background-color:#fff0f0; color: #D20; }
+.code-ray .s .s { background-color:#ffe0e0 }
+.code-ray .s .s  .s { background-color:#ffd0d0 }
+.code-ray .s .k { }
+.code-ray .s .ch { color: #b0b; }
+.code-ray .s .dl { color: #710; }
 
-.CodeRay .sh { background-color:#f0fff0; color:#2B2 }
-.CodeRay .sh .k { }
-.CodeRay .sh .dl { color:#161 }
+.code-ray .sh { background-color:#f0fff0; color:#2B2 }
+.code-ray .sh .k { }
+.code-ray .sh .dl { color:#161 }
 
-.CodeRay .sy { color:#A60 }
-.CodeRay .sy .k { color:#A60 }
-.CodeRay .sy .dl { color:#630 }
+.code-ray .sy { color:#A60 }
+.code-ray .sy .k { color:#A60 }
+.code-ray .sy .dl { color:#630 }
 
-.CodeRay .ta { color:#070 }
-.CodeRay .tf { color:#070; font-weight:bold }
-.CodeRay .ts { color:#D70; font-weight:bold }
-.CodeRay .ty { color:#339; font-weight:bold }
-.CodeRay .v  { color:#036 }
-.CodeRay .xt { color:#444 }
+.code-ray .ta { color:#070 }
+.code-ray .tf { color:#070; font-weight:bold }
+.code-ray .ts { color:#D70; font-weight:bold }
+.code-ray .ty { color:#339; font-weight:bold }
+.code-ray .v  { color:#036 }
+.code-ray .xt { color:#444 }
 
-.CodeRay .ins { background: #afa; }
-.CodeRay .del { background: #faa; }
-.CodeRay .chg { color: #aaf; background: #007; }
-.CodeRay .head { color: #f8f; background: #505 }
+.code-ray .ins { background: #afa; }
+.code-ray .del { background: #faa; }
+.code-ray .chg { color: #aaf; background: #007; }
+.code-ray .head { color: #f8f; background: #505 }
 
-.CodeRay .ins .ins { color: #080; font-weight:bold }
-.CodeRay .del .del { color: #800; font-weight:bold }
-.CodeRay .chg .chg { color: #66f; }
-.CodeRay .head .head { color: #f4f; }
+.code-ray .ins .ins { color: #080; font-weight:bold }
+.code-ray .del .del { color: #800; font-weight:bold }
+.code-ray .chg .chg { color: #66f; }
+.code-ray .head .head { color: #f4f; }

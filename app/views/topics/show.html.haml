@@ -14,29 +14,30 @@
     = link_to 'Reply', resource(@forum, @topic, :posts, :new)
   %table
     - @topic.posts.each_with_index do |post, index|
-      %tr.post-header{ :class => index % 2 == 0 ? 'odd' : 'even'}
-        %td{:colspan => '2'}
-          %h4= post.title ? post.title : @topic.title
-          %span= "by #{post.user.login} at #{post.created_at.formatted(:post)}"
-      %tr.post{ :class => index % 2 == 0 ? 'odd' : 'even', :id => "p#{post.id}" }
-        %td
-          .post-body
-            = pretty_post(post.content)
-        %td.post-profile
-          = image_tag "default_avatar.png"
-          %br
-          %a{:href => resource(post.user)}= post.user.login
-          %br
-          [Administrator]
+      %tr.post
+        %td{ :class => index % 2 == 0 ? 'odd' : 'even' }
+          %div{ :id => "p#{post.id}" }
+            .post-profile
+              = image_tag "default_avatar.png"
+              %br
+              %a{:href => resource(post.user)}= post.user.login
+              %br
+              [Administrator]
 
-          %ul
-            %li
-              Posts:
-              = post.user.posts.count
-            %li
-              Member Since
-              = post.user.created_at.formatted(:standard)
-      
+              %ul
+                %li
+                  Posts:
+                  = post.user.posts.count
+                %li
+                  Member Since
+                  = post.user.created_at.formatted(:standard)
+            .post-header
+              %h4= post.title ? post.title : @topic.title
+              %span
+                = "by #{post.user.login} at #{post.created_at.formatted(:post)}"
+            .post-body
+              = "#{pretty_post(post.content)}"
+          
   .action-items
     = link_to 'New Topic', url(:new_forum_topic, @forum)
     |

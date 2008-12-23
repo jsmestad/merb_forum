@@ -1,8 +1,9 @@
-%h1 Register
+#main
+  %h2 Register
 
-= form_for @user, :action => resource(:users) do
-  = partial 'users/form', :title => 'Join with username and password', :button_text => 'Join'
+  = form_for @user, :action => resource(:users) do
+    = partial 'users/form', :title => 'Join with username and password', :button_text => 'Join'
 
-= partial 'open_id/login_form', :title => 'Join with OpenID', :button_text => 'Join'
+  = partial 'open_id/login_form', :title => 'Join with OpenID', :button_text => 'Join'
 
-= link_to 'Back', url(:root)
+  = link_to 'Back', url(:root)

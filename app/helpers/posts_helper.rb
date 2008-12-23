@@ -2,7 +2,7 @@ module Merb
   module PostsHelper
     
     def bb_code_to_html(content)
-      content.bbcode_to_html({}, true, :disable, :code)
+      content.bbcode_to_html({}, false, :disable, :code)
     end
     
     def highlight_syntax(text)
@@ -13,14 +13,15 @@ module Merb
         snippet = text.slice(starts..ends)
         new_code = snippet.gsub('[code]', '').gsub('[/code]', '')
         highlighted = CodeRay.scan(new_code, :ruby).html
-        text.gsub(snippet, "<div class=\"CodeRay\">#{highlighted}</div>")
+        text.gsub(snippet, "<div class=\"code-ray\">#{highlighted}</div>")
       else
         text
       end
     end
     
     def pretty_post(content)
-      highlight_syntax(bb_code_to_html(content))
+      result = highlight_syntax(content)
+      bb_code_to_html(result)
     end
 
   end
