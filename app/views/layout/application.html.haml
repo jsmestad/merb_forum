@@ -7,25 +7,21 @@
     %link{ :href => "/stylesheets/master.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8" }
 
   %body
-    #container
-      #header
-        #navigation
-          %ul
-            %li
-              %a{:href => url(:root)} main
-            %li
-              %a{:href => url(:users)} members list
-              - if session.user
-                %li
-                  %a{:href => resource(session.user)} account
-                %li
-                  %a{:href => url(:logout)} logout
-              - else
-                %li
-                  %a{:href => url(:new_user)} signup  
-        %h1 Merbherd
-      #main
-        = #message[:notice]
-        = catch_content :for_layout
-      #footer
-        Copyright 2008 - Merbherd
+    #header
+      #navigation
+        %ul
+          %li
+            %a{:href => url(:root)} main
+          %li
+            %a{:href => url(:users)} members list
+            - if session.user
+              %li
+                %a{:href => resource(session.user)} account
+              %li
+                %a{:href => url(:logout)} logout
+            - else
+              %li
+                %a{:href => url(:new_user)} signup
+      %img{:src => "/images/header.png"}
+    = #message[:notice]
+    = catch_content :for_layout

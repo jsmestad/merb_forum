@@ -1,42 +1,43 @@
 #breadcrumb
   %a{:href => url(:root)}MerbHerd
-  >>
+  >
   %a{:href => resource(@topic.forum)}= @topic.forum.name
-  >>
+  >
   = @topic.title
 
-.action-items
-  = link_to 'New Topic', url(:new_forum_topic, @forum)
-  |
-  = link_to 'Reply', resource(@forum, @topic, :posts, :new)
-
-%table
-  %tr
-    %td
-      = @topic.title
-  - @topic.posts.each do |post|
-    %tr
-      %td
-        %div{:id => "p#{post.id}"}
-          .post-profile
-            = image_tag "default_avatar.png"
-            %br
-            %a{:href => resource(post.user)}= post.user.login
-            %br
-            [Administrator]
-
-            %ul
-              %li
-                Posts:
-                = post.user.posts.count
-              %li
-                Member Since
-                = post.user.created_at.formatted(:standard)
-                
+#main
+  %h2= @topic.title
+  
+  .action-items
+    = link_to 'New Topic', url(:new_forum_topic, @forum)
+    |
+    = link_to 'Reply', resource(@forum, @topic, :posts, :new)
+  %table
+    - @topic.posts.each_with_index do |post, index|
+      %tr.post-header{ :class => index % 2 == 0 ? 'odd' : 'even'}
+        %td{:colspan => '2'}
+          %h4= post.title ? post.title : @topic.title
+          %span= "by #{post.user.login} at #{post.created_at.formatted(:post)}"
+      %tr.post{ :class => index % 2 == 0 ? 'odd' : 'even', :id => "p#{post.id}" }
+        %td
           .post-body
-            = Merb::PostsHelper.pretty_post(post.content)
-          
-.action-items
-  = link_to 'New Topic', url(:new_forum_topic, @forum)
-  |
-  = link_to 'Reply', resource(@forum, @topic, :posts, :new)
+            = pretty_post(post.content)
+        %td.post-profile
+          = image_tag "default_avatar.png"
+          %br
+          %a{:href => resource(post.user)}= post.user.login
+          %br
+          [Administrator]
+
+          %ul
+            %li
+              Posts:
+              = post.user.posts.count
+            %li
+              Member Since
+              = post.user.created_at.formatted(:standard)
+      
+  .action-items
+    = link_to 'New Topic', url(:new_forum_topic, @forum)
+    |
+    = link_to 'Reply', resource(@forum, @topic, :posts, :new)

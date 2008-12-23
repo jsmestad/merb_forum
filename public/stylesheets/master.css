@@ -61,7 +61,7 @@ input, select, textarea {
 }
 table {
   width: 100%;
-  border: collapse;
+  border-collapse:collapse;
 }
 table th {
   text-align: left;
@@ -69,22 +69,27 @@ table th {
 /**
  * Layout Level Declarations
  *---------------------------*/
- 
+body {
+  background-color: #FAF6EA;
+}
 #header {
-	background-color: #383A36;
+	background-color: #D6CEAF;
 	color: #D6CEAF;
 	padding: 20px;
-	border-bottom: 6px solid #8C7C4A;
+}
+#breadcrumb {
+  background-color: #8C7C4A;
+  height: 30px;
+  color: #E8EED8;
+  line-height: 30px;
+  padding: 5px;
 }
 #main {
 	width: 80%;
 	margin: 10px auto;
-}
-#footer {
-	font-size: 0.75em;
-	text-align: right;
-	width: 80%;
-	margin: 0 auto;
+	border: 1px solid #E5E5E5;
+	padding: 4em 1.6em;
+	background-color: #FFFFFF;
 }
 #navigation {
   float: right;
@@ -103,11 +108,6 @@ table th {
  text-decoration: none;
  color: #669933; 
 }
-#breadcrumb {
-  font-size: 13px;
-  font-weight: bold;
-  margin: 15px -8px;
-}
 .action-items {
   text-align: right;
   margin: 10px 20px;
@@ -116,19 +116,73 @@ table th {
 /**
  * Forums Level Declarations
  *---------------------------*/
- 
+ .forum th {
+   text-transform: uppercase;
+   font-size: 0.85em;
+   border:0.1em solid #DFDFDF;
+   background-color: #FCFCFC;
+   padding: 0.9em;
+ }
+ .forum th.left {
+   border-left: none;
+ }
+ .forum th.right {
+   border-right: none;
+ }
+ .forum td {
+   padding: 1.2em 1.1em 1.3em;
+   border-bottom: 0.1em dashed #CDCDCD;
+ }
+ .forum-title {
+   font-size: 1.4em;
+ }
+ .forum p {
+   margin: 0.5em 0 0;
+   color: #A1A0A0;
+ }
+ .forum .post-count {
+   background: url("/images/icons/comments.png") no-repeat scroll 0 1.2em;
+   padding: 0 0 0 4em;
+ }
  
 /**
  * Topics Level Declarations
  *---------------------------*/
- 
+ .topic-title {
+   font-size: 1.2em;
+ }
+ p.topic-description {
+   padding-left: 8px;
+   font-size: 0.95em;
+   font-style: italic;
+   margin: 0;
+ }
  
 /**
  * Posts Level Declarations
  *---------------------------*/
 
-.post-body {
+.odd {
+  background-color: #F1F1F1;
+}
+
+.even {
+  background-color: #FAFAFA;
+}
+.post-header {
   padding: 5px;
+}
+.post-header h4 {
+  font-size: 1.2em;
+}
+
+.post-header span {
+  font-size: 0.8em;
+  margin-left: 10px;
+}
+
+.post-body {
+  padding: 10px;
 }
 
 .post-body .content {
@@ -136,8 +190,8 @@ table th {
 }
 
 .post-profile {
-  float: right;
-  width: 25%;
+  font-size: 11px;
+  width: 250px;
   padding: 10px;
   border-left: 1px solid #ccc;
 }

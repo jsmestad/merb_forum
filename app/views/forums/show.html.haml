@@ -1,42 +1,38 @@
 #breadcrumb
   %a{:href => url(:root)} MerbHerd
-  >>
+  >
   = @forum.name
 
-%h1
-  = @forum.name
+#main
+  %h2= @forum.name
 
-.action-items
-  = link_to 'New Topic', url(:new_forum_topic, @forum)
+  .action-items
+    = link_to 'New Topic', url(:new_forum_topic, @forum)
 
-%table.wide
-  %tr
-    %th{ :colspan => '2' }
-      Topic
-    %th
-      Replies
-    %th
-      Last Post
-    %th
-      Admin
-  - @forum.topics.each do |topic|
+  %table.forum
     %tr
-      %td
-        = image_tag "icons/comments.png"
-      %td
-        = link_to topic.title, resource(@forum, topic)
-        %br
-        %span.description
-          = topic.description
-      %td
-        = topic.posts.count - 1
-      %td
-        by
-        %a{:href => resource(topic.posts.last.user)}= topic.posts.last.user.login
-        %br
-        = topic.posts.last.created_at.formatted(:post)
-      %td
-        = link_to 'edit', url(:edit_forum_topic, @forum, @topic)
+      %th
+        Topic
+      %th
+        Replies
+      %th
+        Last Post
+      %th
+        Admin
+    - @forum.topics.each do |topic|
+      %tr
+        %td
+          %a{:href => resource(@forum, topic), :class => 'topic-title'}= topic.title
+          %p.topic-description= topic.description
+        %td.count
+          = topic.posts.count - 1
+        %td
+          by
+          %a{:href => resource(topic.posts.last.user)}= topic.posts.last.user.login
+          %br
+          = topic.posts.last.created_at.formatted(:post)
+        %td
+          = link_to 'edit', url(:edit_forum_topic, @forum, @topic)
 
-.action-items
-  = link_to 'New Topic', url(:new_forum_topic, @forum)
+  .action-items
+    = link_to 'New Topic', url(:new_forum_topic, @forum)

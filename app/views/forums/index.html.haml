@@ -1,36 +1,26 @@
-%h1
-  Forums Index
-  
-%table
-  %tr
-    %th{ :colspan => '2' }
-      Forum Name
-    %th
-      Topics
-    %th
-      Posts
-    %th
-      Last Post
-  - @forums.each do |forum|
+#breadcrumb Merbherd > Forum Index
+#main
+  = link_to 'New Forum', url(:new_forum)
+  %table.forum
     %tr
-      %td
-        = image_tag "icons/full_page.png"
-      %td
-        %a{ :href => resource(forum) }= forum.name
-        %br
-        = forum.description
-      %td
-        = forum.topics.count
-      %td
-        = forum.topics.posts.count
-      %td
-        - if forum.topics.posts.last
-          by
-          = forum.topics.posts.last.user.login
-          %br
-          = forum.topics.posts.last.created_at.formatted(:post)
-        - else
-          "Never Posted"
-
-%hr
-= link_to 'New Forum', url(:new_forum)
+      %th.left
+        Name
+      %th
+        Posts
+      %th.right
+        Last Post
+    - @forums.each do |forum|
+      %tr
+        %td
+          %a{ :href => resource(forum), :class => "forum-title" }= forum.name
+          %p= forum.description
+        %td.post-count
+          = forum.topics.posts.count
+        %td
+          - if forum.topics.posts.last
+            by
+            = forum.topics.posts.last.user.login
+            %br
+            = forum.topics.posts.last.created_at.formatted(:post)
+          - else
+            "Never Posted"
