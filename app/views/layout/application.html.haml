@@ -2,7 +2,7 @@
 %html{ "xml:lang" => "en-us", :lang => "en-us", :xmlns => "http://www.w3.org/1999/xhtml" }
   %head
     %title
-      Merbherd Forums
+      Merbherd - Merb Forum Software
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type" }
     %link{ :href => "/stylesheets/master.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8" }
 
@@ -22,6 +22,6 @@
             - else
               %li
                 %a{:href => url(:new_user)} signup
-      %img{:src => "/images/header.png"}
+      %h1 Merbherd - Forum Software
     = #message[:notice]
     = catch_content :for_layout
