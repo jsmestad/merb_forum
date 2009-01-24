@@ -198,132 +198,47 @@ body {
   border-left: 1px solid #ccc;
 }
 
-/** 
- * code-ray Styles 
- * -------------- **/
-.code-ray {
- font-size: 11px;
- background-color: #f8f8f8;
- border: 1px solid silver;
- font-family: 'Monaco', 'Courier New', 'Terminal', monospace;
- color: #100;
+/**
+ *  Ruby Syntax Highlighting
+ ****************************/
+.CodeRay {
+  background-color: #232323;
+  border: 1px solid #333;
+  font: 1em Monaco, "Courier New", monospace;
+  line-height: 1.4em;
+  color: #E6E0DB;
+  padding: 3px 5px;
+  overflow: auto;
+  width: 500px;
 }
-.code-ray pre { margin: 0px }
-
-div.code-ray { }
-
-span.code-ray { white-space: pre; border: 0px; padding: 2px }
-
-table.code-ray { border-collapse: collapse; width: 100%; padding: 2px }
-table.code-ray td { padding: 2px 4px; vertical-align: top }
-
-.code-ray .line_numbers, .code-ray .no {
- background-color: #def;
- color: gray;
- text-align: right;
+.CodeRay pre {
+  margin: 0px;
+  padding: 0px;
 }
-.code-ray .line_numbers tt { font-weight: bold }
-.code-ray .no { padding: 0px 4px }
-.code-ray .code { width: 100% }
 
-ol.code-ray { font-size: 10pt }
-ol.code-ray li { white-space: pre }
+.CodeRay td.line_numbers {
+  width: 20px;
+  color: #CCC;
+}
+td.line_numbers pre {
+  text-align: center;
+}
 
-.code-ray .code pre { overflow: auto }
-
-.code-ray .debug { color:white ! important; background:blue ! important; }
-
-.code-ray .af { color:#00C }
-.code-ray .an { color:#007 }
-.code-ray .at { color:#f08 }
-.code-ray .av { color:#700 }
-.code-ray .aw { color:#C00 }
-.code-ray .bi { color:#509; font-weight:bold }
-.code-ray .c  { color:#666; }
-
-.code-ray .ch { color:#04D }
-.code-ray .ch .k { color:#04D }
-.code-ray .ch .dl { color:#039 }
-
-.code-ray .cl { color:#B06; font-weight:bold }
-.code-ray .co { color:#036; font-weight:bold }
-.code-ray .cr { color:#0A0 }
-.code-ray .cv { color:#369 }
-.code-ray .df { color:#099; font-weight:bold }
-.code-ray .di { color:#088; font-weight:bold }
-.code-ray .dl { color:black }
-.code-ray .do { color:#970 }
-.code-ray .ds { color:#D42; font-weight:bold }
-.code-ray .e  { color:#666; font-weight:bold }
-.code-ray .en { color:#800; font-weight:bold }
-.code-ray .er { color:#F00; background-color:#FAA }
-.code-ray .ex { color:#F00; font-weight:bold }
-.code-ray .fl { color:#60E; font-weight:bold }
-.code-ray .fu { color:#06B; font-weight:bold }
-.code-ray .gv { color:#d70; font-weight:bold }
-.code-ray .hx { color:#058; font-weight:bold }
-.code-ray .i  { color:#00D; font-weight:bold }
-.code-ray .ic { color:#B44; font-weight:bold }
-
-.code-ray .il { background: #eee }
-.code-ray .il .il { background: #ddd }
-.code-ray .il .il .il { background: #ccc }
-.code-ray .il .idl { font-weight: bold; color: #888 }
-
-.code-ray .im { color:#f00; }
-.code-ray .in { color:#B2B; font-weight:bold }
-.code-ray .iv { color:#33B }
-.code-ray .la { color:#970; font-weight:bold }
-.code-ray .lv { color:#963 }
-.code-ray .oc { color:#40E; font-weight:bold }
-.code-ray .of { color:#000; font-weight:bold }
-.code-ray .op { }
-.code-ray .pc { color:#038; font-weight:bold }
-.code-ray .pd { color:#369; font-weight:bold }
-.code-ray .pp { color:#579; }
-.code-ray .ps { color:#00C; font-weight: bold; }
-.code-ray .pt { color:#339; font-weight:bold }
-.code-ray .r, .kw  { color:#080; font-weight:bold }
-
-.code-ray .ke { color: #808; }
-.code-ray .ke .dl { color: #606; }
-.code-ray .ke .ch { color: #80f; }
-.code-ray .vl { color: #088; }
-
-.code-ray .rx { background-color:#fff0ff }
-.code-ray .rx .k { color:#808 }
-.code-ray .rx .dl { color:#404 }
-.code-ray .rx .mod { color:#C2C }
-.code-ray .rx .fu  { color:#404; font-weight: bold }
-
-.code-ray .s { background-color:#fff0f0; color: #D20; }
-.code-ray .s .s { background-color:#ffe0e0 }
-.code-ray .s .s  .s { background-color:#ffd0d0 }
-.code-ray .s .k { }
-.code-ray .s .ch { color: #b0b; }
-.code-ray .s .dl { color: #710; }
-
-.code-ray .sh { background-color:#f0fff0; color:#2B2 }
-.code-ray .sh .k { }
-.code-ray .sh .dl { color:#161 }
-
-.code-ray .sy { color:#A60 }
-.code-ray .sy .k { color:#A60 }
-.code-ray .sy .dl { color:#630 }
-
-.code-ray .ta { color:#070 }
-.code-ray .tf { color:#070; font-weight:bold }
-.code-ray .ts { color:#D70; font-weight:bold }
-.code-ray .ty { color:#339; font-weight:bold }
-.code-ray .v  { color:#036 }
-.code-ray .xt { color:#444 }
-
-.code-ray .ins { background: #afa; }
-.code-ray .del { background: #faa; }
-.code-ray .chg { color: #aaf; background: #007; }
-.code-ray .head { color: #f8f; background: #505 }
-
-.code-ray .ins .ins { color: #080; font-weight:bold }
-.code-ray .del .del { color: #800; font-weight:bold }
-.code-ray .chg .chg { color: #66f; }
-.code-ray .head .head { color: #f4f; }
+.CodeRay .an { color: #E7BE69 }                      /* html attribute */
+.CodeRay .c  { color: #BC9358; font-style: italic; } /* comment */
+.CodeRay .ch { color: #509E4F }                      /* escaped character */
+.CodeRay .cl { color: #FFF }                         /* class */
+.CodeRay .co { color: #FFF }                         /* constant */
+.CodeRay .fl { color: #A4C260 }                      /* float */
+.CodeRay .fu { color: #FFC56D }                      /* function */
+.CodeRay .gv { color: #D0CFFE }                      /* global variable */
+.CodeRay .i  { color: #A4C260 }                      /* integer */
+.CodeRay .il { background: #151515 }                 /* inline code */
+.CodeRay .iv { color: #D0CFFE }                      /* instance variable */
+.CodeRay .pp { color: #E7BE69 }                      /* doctype */
+.CodeRay .r  { color: #CB7832 }                      /* keyword */
+.CodeRay .rx { color: #A4C260 }                      /* regex */
+.CodeRay .s  { color: #A4C260 }                      /* string */
+.CodeRay .sy { color: #6C9CBD }                      /* symbol */
+.CodeRay .ta { color: #E7BE69 }                      /* html tag */
+.CodeRay .pc { color: #6C9CBD }                      /* boolean */

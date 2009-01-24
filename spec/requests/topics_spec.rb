@@ -14,18 +14,18 @@ describe "Topics Resource" do
   
   describe "index action" do
     it "should respond successfully" do
-      visits("/forums/1/topics").should be_successful
+      visit("/forums/1/topics").should be_successful
     end
     
     it "should render the proper view" do
-      response = visits("/forums/1/topics")
+      response = visit("/forums/1/topics")
       response.body.should include("Forum Index")
     end
   end
 
   describe "show action", :given => 'a topic exists' do
     before do
-      @response = visits("/forums/1/topics/1")
+      @response = visit("/forums/1/topics/1")
     end
     
     it "should respond successfully" do
@@ -35,7 +35,7 @@ describe "Topics Resource" do
   
   describe "new action" do
     before do
-      @response = visits("/forums/1/topics/new")
+      @response = visit("/forums/1/topics/new")
     end
     
     it "should respond successfully" do

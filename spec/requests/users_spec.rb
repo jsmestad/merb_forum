@@ -12,11 +12,11 @@ describe "Users Resource" do
     end
     
     it "should respond successfully" do
-      visits("/users").should be_successful
+      visit("/users").should be_successful
     end
     
     it "should render the proper view" do
-      response = visits("/users")
+      response = visit("/users")
       response.body.should include("Members List")
     end
   end
@@ -24,7 +24,7 @@ describe "Users Resource" do
   describe "show action", :given => 'a user exists' do
     before do
       login('Test', 'password')
-      @response = visits("/users/1")
+      @response = visit("/users/1")
     end
     
     it "should respond successfully" do
@@ -34,7 +34,7 @@ describe "Users Resource" do
   
   describe "new action" do
     before do
-      @response = visits("/users/new")
+      @response = visit("/users/new")
     end
     
     it "should respond successfully" do

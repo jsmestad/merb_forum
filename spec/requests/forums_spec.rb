@@ -13,18 +13,19 @@ describe "Forums Resource" do
   
   describe "index action" do
     it "should respond successfully" do
-      visits("/forums").should be_successful
+      visit("/forums").should be_successful
     end
     
-    it "should render the proper view" do
-      response = visits("/forums")
-      response.body.should include("Forums Index")
-    end
+    # Remove brittle tests
+    # it "should render the proper view" do
+    #       response = visit("/forums")
+    #       response.body.should include("Forums Index")
+    #     end
   end
 
   describe "show action", :given => 'a forum exists' do
     before do
-      @response = visits("/forums/1")
+      @response = visit("/forums/1")
     end
     
     it "should respond successfully" do
@@ -34,7 +35,7 @@ describe "Forums Resource" do
   
   describe "new action" do
     before do
-      @response = visits("/forums/new")
+      @response = visit("/forums/new")
     end
     
     it "should respond successfully" do

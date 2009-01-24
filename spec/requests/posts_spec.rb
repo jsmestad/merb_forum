@@ -15,7 +15,7 @@ describe "Posts Resource" do
 
   # describe "show action", :given => 'a topic exists' do
   #   before do
-  #     @response = visits("/forums/1/topics/1")
+  #     @response = visit("/forums/1/topics/1")
   #   end
   #   
   #   it "should respond successfully" do
@@ -25,7 +25,7 @@ describe "Posts Resource" do
   
   describe "new action" do
     before do
-      @response = visits("/forums/1/topics/1/posts/new")
+      @response = visit("/forums/1/topics/1/posts/new")
     end
     
     it "should respond successfully" do
